@@ -1,0 +1,237 @@
+/* body {
+    background-color: #e4ebff;
+} */
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+
+
+
+
+.head_background {
+    align-items: center;
+    display: flex;
+    width: 100%;
+    height: 90px;
+    background-color: #abc1ff;
+    position: fixed;
+    top: 0;
+}
+
+.logo {
+    display: block;
+    color: white;
+    font-weight: 900;
+    font-style: italic;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 35px;
+    margin: 50px;
+    
+}
+
+nav {
+    width: 100%;
+}
+
+ul {
+    padding-left: 80px;
+    display: flex;
+    list-style-type: none;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.nav_link {
+    margin-left: 60px;
+    display: block;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    font-style: italic;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.info_urok {
+    width: 100%;
+    max-width: 400px;
+    height: 220px;
+    background-color: #abc1ff;
+    margin: 200px auto 400px auto;
+    text-align: center;
+    padding: 10px 30px 0 30px;
+    border-radius: 20px;
+}
+
+.number_lesson {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    font-weight: 600;   
+    font-size: 35px;
+    font-style: italic;
+}
+
+.discription_start_lesson {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    font-weight: 400;   
+    font-size: 20px;
+}
+
+.discription_end_lesson {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    font-weight: 400;   
+    font-size: 20px;
+}
+
+.start_lesson {
+    background-color: #7aff93;
+    width: 250px;
+    height: 45px;
+    border: none;
+    border-radius: 7px;
+    margin-top: 28px;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+    font-style: italic;
+    font-weight: 400;   
+    font-size: 20px;
+    cursor: pointer;
+    outline: 0 !important;
+    transition: 0.3s;
+}
+.start_lesson:hover {
+    border: 1px solid black;
+}
+
+.input_field {
+    display: flex;
+    width: 70%;
+    height: 90px;
+    border: 3px solid #abc1ff;
+    border-radius: 10px;
+    margin: 120px auto 0 auto;
+    align-items: center;
+}
+
+.input {
+    display: block;
+    width: 100%;
+    height: 80px;
+    border: none;
+    /* margin: 120px auto 0 auto; */
+}
+.input::placeholder {
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.background_input_field {
+    position: relative;
+    display: flex;
+    margin: 170px auto 0;
+    width: 1200px;
+    height: 110px;
+    background-color: white;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    border: 10px solid #abc1ff;
+
+}
+
+.input_field {
+    width: 20px;
+    height: 80px;
+    padding-top: 0;
+    padding-left: 0; 
+    padding-right: 0;
+    z-index: 1;
+    position: absolute;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 50px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: left;
+    color: #b9b6b6;
+    letter-spacing: 2px;  
+    outline: none;
+    margin-top: 0;
+} 
+
+.text_of_lesson_conteiner {
+    /* position: absolute; */
+    /* left: 0; */
+    width: auto;
+    height: 80px;
+    z-index: 0;
+}
+
+.text_of_lesson {
+    padding-top: 3px;
+    /* padding-left: 90px; */
+    font-family: 'Open Sans', sans-serif;
+    font-size: 50px;
+    text-align: left;
+    color: black;
+    letter-spacing: 2px;
+    width: auto;
+}
+
+.background_stats {
+    display: flex;
+    background-color: #eaf1f1;
+    width: 1100px;
+    height: 60px;
+    margin: 10px auto;
+    border-radius: 20px;
+    align-items: center;
+}
+
+.mistake_counter {
+    display: block;
+    /* border: 1px solid black; */
+    width: auto;
+    height: auto;
+    margin-left: 40px;
+}
+
+.result_urok {
+    width: 100%;
+    max-width: 400px;
+    height: 220px;
+    background-color: #abc1ff;
+    margin: 200px auto 400px auto;
+    text-align: center;
+    padding: 10px 30px 0 30px;
+    border-radius: 20px;
+}
+
+a {
+    color: white;
+}
+
+.next_lesson {
+    background-color: #7aff93;
+    width: 250px;
+    height: 45px;
+    border: none;
+    border-radius: 7px;
+    margin-top: 70px;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+    font-style: italic;
+    font-weight: 400;   
+    font-size: 20px;
+    cursor: pointer;
+    outline: 0 !important;
+    transition: 0.3s;
+}
+.next_lesson:hover {
+    border: 1px solid black;
+}
