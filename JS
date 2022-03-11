@@ -1,0 +1,194 @@
+// -----------------Глобальные переменные-----------------
+const state = {
+    numLessen: 0,
+}
+
+// ________________________________________________________
+
+// -------------------Массивы с данными------------------
+
+// Номера уроков 
+let arr_numberOfLessons = [
+    'Урок 1',
+    'Урок 2',
+    'Урок 3',
+]
+// описания уроков
+let arr_discriptionOfLessons = [
+    'В этом уроке мы познакиммя с базовыми клавишами "asdf" и "jkl;"',
+    'В этом уроке мы отточим навыки печатания на базовых клавишах "asdf" и "jkl;"',
+    'бла бла бла давай печатай!!',
+]
+// Тексты для тренировок
+let arr_textsForTraining = [
+'asdfjkl;',
+'qwertyuiop',
+'zxcvbnm'
+]
+// _________________________________________________________
+
+// Создание родительской директории
+let parentElementPage = document.querySelector('#parent__page')
+
+// Глобальные переменные 
+let ms = 0
+let button 
+
+
+// ---------------------Функции--------------------
+
+// Создание окна информации об уроке 
+document.addEventListener('DOMContentLoaded', go)
+function go() {
+    let {numLessen: iter} = state;
+        let backgroundInfoAboutLesson = document.createElement('div')
+        backgroundInfoAboutLesson.setAttribute('class', 'info_urok')
+        backgroundInfoAboutLesson.setAttribute('id', 'info__urok')
+        let nameOfLesson = document.createElement('div')
+        nameOfLesson.setAttribute('class', 'number_lesson')
+        let discriptionLesson = document.createElement('div')
+        discriptionLesson.setAttribute('class', 'discription_start_lesson')
+        let buttonStartLesson = document.createElement('button')
+        buttonStartLesson.setAttribute('class', 'start_lesson')
+        buttonStartLesson.setAttribute('id', 'start__lesson')
+    
+        nameOfLesson.innerHTML = arr_numberOfLessons[iter]
+        discriptionLesson.innerHTML = arr_discriptionOfLessons[iter]
+        buttonStartLesson.innerHTML = 'Начать'
+    
+        parentElementPage.append(backgroundInfoAboutLesson)
+        backgroundInfoAboutLesson.append(nameOfLesson)
+        backgroundInfoAboutLesson.append(discriptionLesson)
+        backgroundInfoAboutLesson.append(buttonStartLesson)
+
+        buttonStartLesson.addEventListener('click', createLesson)
+        buttonStartLesson.addEventListener('click', removeOpisanie)
+        function removeOpisanie() {
+            backgroundInfoAboutLesson.parentNode.removeChild(backgroundInfoAboutLesson)
+        }
+    // }
+}
+    
+   
+   
+// Создание окна завершения урока
+function createEndLesson() {
+    let {numLessen: iter} = state
+    let backgroundEndLesson = document.createElement('div')
+    backgroundEndLesson.setAttribute('class', 'result_urok')
+    backgroundEndLesson.setAttribute('id', 'result__urok')
+    let nameOfLessonEnd = document.createElement('div')
+    nameOfLessonEnd.setAttribute('class', 'number_lesson')
+    let discriptionLessonEnd = document.createElement('div')
+    discriptionLessonEnd.setAttribute('class', 'discription_end_lesson')
+    let statsOfCompleteLesson = document.createElement('div')
+    let buttonNextLesson = document.createElement('button')
+    buttonNextLesson.setAttribute('class', 'next_lesson')
+    buttonNextLesson.innerHTML = 'Следующий урок!'
+     
+    
+    nameOfLessonEnd.innerHTML = arr_numberOfLessons[iter] +' выполнен!'
+    discriptionLessonEnd.innerHTML = 'Твой результат:'
+
+    parentElementPage.append(backgroundEndLesson)
+    backgroundEndLesson.append(nameOfLessonEnd)
+    backgroundEndLesson.append(discriptionLessonEnd)
+    backgroundEndLesson.append(buttonNextLesson)
+
+    
+
+    buttonNextLesson.addEventListener('click', nextLesson)
+    function nextLesson() {
+        state.numLessen += 1
+        go();
+        backgroundEndLesson.parentNode.removeChild(backgroundEndLesson)
+    }
+}
+
+// Создание урока
+function createLesson() {
+    let {numLessen: iter} = state
+
+    // Создание урока
+    // Создание поля для ввода
+    let backgroundInputField = document.createElement('div')
+    backgroundInputField.setAttribute('class', 'background_input_field')
+    let input = document.createElement('input')
+    input.setAttribute('class', 'input_field')
+    input.setAttribute('value', '')
+    input.setAttribute('type', 'text')
+    input.setAttribute('id', 'keyboard')
+    input.setAttribute('spellcheck', 'false')
+    input.setAttribute('autocomplete', 'off')
+    input.disabled = 'true'; 
+    let textOfLessonConteiner = document.createElement('div')
+    textOfLessonConteiner.setAttribute('class', 'text_of_lesson_conteiner')
+    let textOfLesson = document.createElement('div')
+    textOfLesson.setAttribute('id', 'text_of_lesson')
+    textOfLesson.setAttribute('class', 'text_of_lesson')
+    textOfLesson.innerHTML = arr_textsForTraining[iter]
+
+
+    // Создание статистики урока
+    let backgroundStats = document.createElement('div')
+    backgroundStats.setAttribute('class', 'background_stats')
+    let mistakeCounter = document.createElement('div')
+    mistakeCounter.setAttribute('class', 'mistake_counter')
+
+    
+
+    // Вствка элементов на страницу
+    // вставка поля для ввода
+
+    parentElementPage.append(backgroundInputField)
+    backgroundInputField.append(input);
+    backgroundInputField.append(textOfLessonConteiner)
+    textOfLessonConteiner.append(textOfLesson)
+
+    // вставка статистики урока
+    parentElementPage.append(backgroundStats)
+    backgroundStats.append(mistakeCounter)
+
+
+    let stroka_in = textOfLesson.innerHTML.split('')
+    input.focus();
+    // console.log(stroka_in)
+
+    document.body.addEventListener('keyup', press_key)
+    mistakeCounter.innerHTML = 'Mistakes: ' +ms
+
+    let fieldMainWidth = textOfLessonConteiner.offsetWidth
+    input.style.width = fieldMainWidth +'px'
+
+    
+    function removeLesson() {
+        backgroundInputField.parentNode.removeChild(backgroundInputField)
+        backgroundStats.parentElement.removeChild(backgroundStats)
+    }
+
+
+
+    function press_key(event) {
+        
+        let KeyName = event.key;
+        if(KeyName == stroka_in[0]){
+            input.value += KeyName;
+            stroka_in.shift();
+        }
+        else{
+            ms += 1
+            mistakeCounter.innerHTML = 'Mistakes: ' +ms
+
+        } 
+        if(stroka_in.length == 0) { 
+            removeLesson()
+            createEndLesson()
+            console.log('hi')
+            
+        }
+    }   
+} 
+// for (let it = 0; it < 3; it++) {
+//     createDiscription()
+//     break;
+// }
