@@ -3,6 +3,11 @@
 } */
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 
 
@@ -27,7 +32,7 @@
     
 }
 
-nav {
+/* nav {
     width: 100%;
 }
 
@@ -37,31 +42,96 @@ ul {
     list-style-type: none;
     width: 100%;
     margin-bottom: 0;
+} */
+
+body{
+    background: #a6b1ec6b;
+}
+
+.container{
+    width: 1110px;
+    height: 100%;
+}
+
+.header{
+    height: 100px;
+    width: 1110px;
+    margin: 0 auto;
+    background: #3071E7;
+    border-radius: 0 0 35px 35px;
+}
+
+.header_nav{
+    height: 100px;
+}
+
+.header_nav ul{
+    display: flex;
+    margin:0 125px;
+    align-items: center;
+    height: inherit;
+    color: #fff;
+    font-size: 22px;
+    font-family: 'Aristotelica', sans-serif;
+    /* font-style: italic; */
+    font-weight: 700;
+
+
+}
+
+.header_logo img{
+    width: 220px;
+    height: 90px;
+    margin: 0 70px;
 }
 
 .nav_link {
-    margin-left: 60px;
-    display: block;
-    font-family: 'Open Sans', sans-serif;
-    color: white;
-    font-style: italic;
-    font-size: 20px;
-    cursor: pointer;
+    margin-right: 50px;
+}
+
+
+.nav_link:nth-child(2){
+    margin: 0;
+}
+
+.nav_link:nth-child(5){
+    margin-right: 0;
+}
+
+.footer{
+    height: 110px;
+    margin-top: 200px;
+    padding: 0;
+    color: #fff;
+    background-color: #161E35;
+    text-align: center;
+}
+
+.footer_inner{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_links{
+    margin-top: 40px;
+    width: 640px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .info_urok {
     width: 100%;
     max-width: 400px;
     height: 220px;
-    background-color: #abc1ff;
-    margin: 200px auto 400px auto;
+    background-color: #3071E7;
+    margin: 200px auto 0 auto;
     text-align: center;
     padding: 10px 30px 0 30px;
     border-radius: 20px;
 }
 
 .number_lesson {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Aristotelica', sans-serif;
     color: white;
     font-weight: 600;   
     font-size: 35px;
@@ -69,7 +139,7 @@ ul {
 }
 
 .discription_start_lesson {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Aristotelica', sans-serif;
     color: white;
     font-weight: 400;   
     font-size: 20px;
@@ -90,11 +160,11 @@ ul {
     border-radius: 7px;
     margin-top: 28px;
     font-size: 20px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Aristotelica', sans-serif;
     color: black;
     font-style: italic;
-    font-weight: 400;   
-    font-size: 20px;
+    font-weight: 100;   
+    font-size: 25px;
     cursor: pointer;
     outline: 0 !important;
     transition: 0.3s;
@@ -132,7 +202,7 @@ ul {
 .background_input_field {
     position: relative;
     display: flex;
-    margin: 170px auto 0;
+    margin: 100px auto 0;
     width: 1200px;
     height: 110px;
     background-color: white;
@@ -187,9 +257,10 @@ ul {
     background-color: #eaf1f1;
     width: 1100px;
     height: 60px;
-    margin: 10px auto;
+    margin: 10px auto 341px auto;
     border-radius: 20px;
     align-items: center;
+
 }
 
 .mistake_counter {
@@ -235,3 +306,16 @@ a {
 .next_lesson:hover {
     border: 1px solid black;
 }
+
+
+
+
+
+
+
+@font-face {
+    font-family: "Aristotelica"; 
+    src: url("/fonts/aristotelica/Ari_font.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: light; 
+    } 
