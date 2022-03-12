@@ -9,9 +9,9 @@ const state = {
 
 // Номера уроков 
 let arr_numberOfLessons = [
-    'Урок 1',
-    'Урок 2',
-    'Урок 3',
+    'Урок первый',
+    'Урок второй',
+    'Урок третий',
 ]
 // описания уроков
 let arr_discriptionOfLessons = [
@@ -31,7 +31,6 @@ let arr_textsForTraining = [
 let parentElementPage = document.querySelector('#parent__page')
 
 // Глобальные переменные 
-let ms = 0
 let button 
 
 
@@ -98,12 +97,15 @@ function createEndLesson() {
     
 
     buttonNextLesson.addEventListener('click', nextLesson)
-    function nextLesson() {
-        state.numLessen += 1
-        go();
-        backgroundEndLesson.parentNode.removeChild(backgroundEndLesson)
-    }
+        function nextLesson() {
+            state.numLessen += 1
+            go();
+            backgroundEndLesson.parentNode.removeChild(backgroundEndLesson)
+            console.log(state.numLessen)
+          
+        }
 }
+
 
 // Создание урока
 function createLesson() {
@@ -155,6 +157,7 @@ function createLesson() {
     // console.log(stroka_in)
 
     document.body.addEventListener('keyup', press_key)
+    let ms = 0
     mistakeCounter.innerHTML = 'Mistakes: ' +ms
 
     let fieldMainWidth = textOfLessonConteiner.offsetWidth
